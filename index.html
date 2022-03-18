@@ -95,7 +95,7 @@
 		const urlParams = new URLSearchParams(queryString)
 		const nameString = urlParams.get('name')
 		console.log(queryString)
-		if (nameString.length > 0) {
+		if (nameString != null && nameString.length > 0) {
 			result = nameString + result
 		}
 		titleDiv.innerHTML = result
