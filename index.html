@@ -6,7 +6,7 @@
 	<title>Title</title>
 </head>
 <body>
-	<div id="indexTitle">NiceName用户隐私协议</div>
+	<div id="indexTitle">用户隐私协议</div>
 <br>
 <div id="contentTitle">最近更新日期：2022年05月25日。</div>
 <br>
@@ -220,8 +220,9 @@
 <br>
 九、如何联系我们如果您对本隐私政策有任何疑问、意见或建议，通过以下方式与我们联系：
 <br>
-公司：竹架科技（深圳）工作室
-<br>
+<div id = "entityDiv">
+主体：
+</div>
 电子邮件：3568214860@qq.com
 <br>
 地 址：广东省深圳市宝安区石岩街道松白路星曜名城C203
@@ -234,14 +235,25 @@
 		var result = titleString
 		var titleDiv = document.getElementById("indexTitle")
 		var subDiv = document.getElementById("contentTitle")
+		var entityDiv = document.getElementById("entityDiv")
 		const queryString = window.location.search
 		const urlParams = new URLSearchParams(queryString)
-		const nameString = urlParams.get('name')
-		console.log(queryString)
-		if (nameString != null && nameString.length > 0) {
-			result = nameString + result
-			subDiv.innerHTML = "本政策仅适用于竹架科技（深圳）工作室研发的" + nameString +"产品。最近更新日期：2022年05月25日。"
+		const projectNameString = urlParams.get('name')
+		var entityNameString = urlParams.get('entity')
+		if (entityNameString == null || entityNameString.length <= 0) {
+			const zjURLEncoded = "%E7%AB%B9%E6%9E%B6%E7%A7%91%E6%8A%80%EF%BC%88%E6%B7%B1%E5%9C%B3%EF%BC%89%E5%B7%A5%E4%BD%9C%E5%AE%A4"
+			entityNameString = decodeURI(zjURLEncoded)
 		}
+		entityDiv.innerHTML = "主体：" + entityNameString
+
+		console.log(projectNameString)
+		console.log(entityNameString)
+		if (projectNameString != null && projectNameString.length > 0) {
+			result = projectNameString + result
+			subDiv.innerHTML = "本政策仅适用于" + entityNameString +"研发的" + projectNameString +"产品。最近更新日期：2022年05月25日。"
+		}
+
+		
 		titleDiv.innerHTML = result
 
 	</script>
