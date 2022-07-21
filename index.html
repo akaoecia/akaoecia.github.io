@@ -245,18 +245,26 @@
 		const urlParams = new URLSearchParams(queryString)
 		const projectNameString = urlParams.get('name')
 		var entityNameString = urlParams.get('entity')
+		var channelString = urlParams.get('channel')
 		if (entityNameString == null || entityNameString.length <= 0) {
 			const zjURLEncoded = "%E7%AB%B9%E6%9E%B6%E7%A7%91%E6%8A%80%EF%BC%88%E6%B7%B1%E5%9C%B3%EF%BC%89%E5%B7%A5%E4%BD%9C%E5%AE%A4"
 			entityNameString = decodeURI(zjURLEncoded)
 		}
-		entityDiv.innerHTML = "主体：" + entityNameString
 
 		console.log(projectNameString)
 		console.log(entityNameString)
-		if (projectNameString != null && projectNameString.length > 0) {
-			result = projectNameString + result
-			subDiv.innerHTML = "本政策仅适用于" + entityNameString +"研发的" + projectNameString +"产品。最近更新日期：2022年05月25日。"
+		console.log(channelString)
+		var finalAuther = entityNameString;
+		if (channelString != null && channelString.length > 0) {
+			if (channelString == "huawei") {
+				finalAuther = decodeURI("%E5%BC%A0%E6%B8%85%E6%9C%9B")
+			}
 		}
+		if (projectNameString != null && projectNameString.length > 0) {
+			result = projectNameString + result;
+			subDiv.innerHTML = "本政策仅适用于" + finalAuther +"研发的" + projectNameString +"产品。最近更新日期：2022年05月25日。"
+		}
+		entityDiv.innerHTML = "主体：" + finalAuther
 
 		
 		titleDiv.innerHTML = result
