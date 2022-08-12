@@ -255,11 +255,6 @@
 		console.log(entityNameString)
 		console.log(channelString)
 		var finalAuther = entityNameString;
-		if (channelString != null && channelString.length > 0) {
-			if (projectNameString == "nicename" && channelString == "huawei") {
-				finalAuther = decodeURI("%E5%BC%A0%E6%B8%85%E6%9C%9B")
-			}
-		}
 		if (projectNameString != null && projectNameString.length > 0) {
 			result = projectNameString + result;
 			subDiv.innerHTML = "本政策仅适用于" + finalAuther +"研发的" + projectNameString +"产品。最近更新日期：2022年05月25日。"
