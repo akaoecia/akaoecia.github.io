@@ -4,6 +4,14 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Privacy Policy</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		table, td {
+			border:  2px solid #ddd;
+		}
+	</style>
 </head>
 <body>
 	<div id="indexTitle">用户隐私协议</div>
@@ -82,12 +90,29 @@
 （一）我们的产品集成友盟+SDK，友盟+SDK需要收集您的设备Mac地址、唯一设备识别码（IMEI/android ID/IDFA/OPENUDID/GUID/IP地址/SIM 卡 IMSI 信息）以提供统计分析服务，并通过地理位置，获取已安装APP信息校准报表数据准确性，提供基础反作弊能力。
 <br>
 （四）APP基础权限说明
-<br>
-类目	权限	说明
-<br>
-网络	ACCESS_NETWORK_STATE	获取网络使用能力，用于网络请求发送
-<br>
-手机状态	READ_PHONE_STATE	获取手机状态数据，用于定位分析问题能力
+<table border="1" >
+<tr>
+	<th>行为阶段</th>
+	<th>主体类型</th>
+	<th>主体名称</th>
+	<th>行为名称</th>
+	<th>权限名称</th>
+</tr>
+<tr>
+	<td>APP前台运行时</td>
+	<td>SDK</td>
+	<td>com.umeng</td>
+	<td>获取网络使用能力</td>
+	<td>ACCESS_NETWORK_STATE</td>
+</tr>
+<tr>
+	<td>APP前台运行时</td>
+	<td>SDK</td>
+	<td>com.umeng</td>
+	<td>获取设备序列号</td>
+	<td>READ_PHONE_STATE</td>
+</tr>
+</table>
 <br>
 <br>
 三、我们如何共享、转让、公开披露您的用户信息
