@@ -87,7 +87,7 @@
 <br>
 二、我们如何使用基础权限数据说明
 <br>
-（一）我们的产品集成友盟+SDK，友盟+SDK需要收集您的设备Mac地址、唯一设备识别码（IMEI/android ID/IDFA/OPENUDID/GUID/IP地址/SIM 卡 IMSI 信息）以提供统计分析服务，并通过地理位置，获取已安装APP信息校准报表数据准确性，提供基础反作弊能力。
+（一）我们的产品集成微信 SDK，微信 SDK，接入微信开放平台，让你的移动应用支持微信分享、微信收藏和微信支付。
 <br>
 （四）APP基础权限说明
 <table border="1" >
@@ -101,16 +101,16 @@
 <tr>
 	<td>APP前台运行时</td>
 	<td>SDK</td>
-	<td>com.umeng</td>
+	<td>com.tencent.mm.opensdk</td>
 	<td>获取网络使用能力</td>
 	<td>ACCESS_NETWORK_STATE</td>
 </tr>
 <tr>
 	<td>APP前台运行时</td>
 	<td>SDK</td>
-	<td>com.umeng</td>
-	<td>获取设备序列号</td>
-	<td>READ_PHONE_STATE</td>
+	<td>com.tencent.mm.opensdk</td>
+	<td>读取网络状态</td>
+	<td>ACCESS_WIFI_STATE</td>
 </tr>
 </table>
 <br>
@@ -129,13 +129,13 @@
 <br>
 <strong>
 <br>
-（1）第三方SDK名称：友盟统计
+（1）第三方SDK名称：微信开放平台微信SDK
 <br>
-使用目的：数据统计
+使用目的：登录、支付
 <br>
-收集类型：设备信息（IMEI/MAC/Android ID/IDFA/OpenUDID/GUID/SIM卡IMSI/地理位置等）
+收集类型：存储的个人文件、网络信息
 <br>
-说明：隐私权政策链接https://www.umeng.com/page/policy；获取用户设备的IMEI，通过IMEI对用户进行唯一标识，用于数据统计分析，以便为您提供精细化服务。
+说明：隐私权政策链接https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy
 <br>
 </strong>
 <br>
@@ -285,7 +285,7 @@
 		var finalAuther = entityNameString;
 		if (projectNameString != null && projectNameString.length > 0) {
 			result = projectNameString + result;
-			subDiv.innerHTML = "本政策仅适用于" + finalAuther +"研发的" + projectNameString +"产品。最近更新日期：2022年08月16日。"
+			subDiv.innerHTML = "本政策仅适用于" + finalAuther +"研发的" + projectNameString +"产品。最近更新日期：2023年11月15日。"
 		}
 		entityDiv.innerHTML = "主体：" + finalAuther
 
